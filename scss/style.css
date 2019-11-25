@@ -179,6 +179,12 @@ img {
   align-items: center;
 }
 
+@media screen and (max-width: 768px) {
+  .hero {
+    width: 100%;
+  }
+}
+
 .hero-title {
   font-size: 60px;
   font-family: "Amatic SC", cursive;

@@ -96,7 +96,7 @@ $breakpoints: (
     @content;
   }
 }
-@mixin mq($breakpoint: sm) {
+@mixin mq2($breakpoint: md) {
   @media #{map-get($breakpoints, $breakpoint)} {
     @content;
   }
@@ -277,6 +277,9 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
+  @include mq2 {
+    width: 100%;
+  }
   &-title {
     font-size: 60px;
     font-family: $font-family_corp;
