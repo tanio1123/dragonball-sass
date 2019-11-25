@@ -277,9 +277,6 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-  @include mq2 {
-    width: 100%;
-  }
   &-title {
     font-size: 60px;
     font-family: $font-family_corp;
@@ -302,6 +299,9 @@ img {
 // ==================================
 .container {
   width: $site-width;
+  @include mq2() {
+    width: 100%;
+  }
   @include mq() {
     width: 100%;
   }
