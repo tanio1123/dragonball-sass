@@ -1,37 +1,4 @@
 // ==============================
-// sassの使い方
-// ==============================
-// sass（サス）は「プリプロセッサー」や「メタ言語」とも呼ばれる
-// 書き方は{}を使わないsass記法と普通のcssと同じ{}を使うscss記法の２種類
-// 他にも「Less（レス）」なんてものも一時流行ったがあまり使われず
-// https://webukatu.com/wordpress/blog/1633
-
-// ==============================
-// sassのメリット
-// ==============================
-// 1.コンポーネントごとにまとめられるので保守性が上がる
-// 2.いちいち同じセレクタを書かなくていいので開発速度が上がる
-// 3.見やすくてバグが発生しにくい
-
-// ==============================
-// sassの特徴
-// ==============================
-// 1.ネスト（入れ子構造）で書く
-// 2.変数が使える
-// 3.関数のようなmixinというものが使える
-// 4.インポートが使える
-//   @import “./mixins.scss”
-// 他にも下記サイトのように色々な機能があるが、上記だけ覚えておけばOK
-// https://cartman0.hatenablog.com/entry/2015/07/17/060125
-
-// ==============================
-// sassの使い方
-// ==============================
-// 1.拡張子はscss
-// 2.cssへコンパイルする必要があるので、コンパイル用のライブラリを入れる（色々ある）
-// 3.コンパイルしてcssをhtmlでいつもと同じ様に読み込むだけ
-
-// ==============================
 // 変数
 // ==============================
 $font-color_default: #777;
@@ -60,21 +27,6 @@ $space_3l: 40px;
 
 $font-family_corp: "Amatic SC", cursive;
 
-// メディアクエリのブレークポイント設定
-
-//@media screen and (max-width: 414px){
-//  .btn{
-//    font-size: .7em;
-//  }
-//}
-
-// 通常、変数として設定しておくと後々変更しやすくて便利
-//  !defaultはすでに変数に値が入っていた場合は何もせず、変数に値が入っていない時に割り当てられるもの
-// https://hail2u.net/blog/webdesign/how-to-use-bang-default-flag-in-sass-and-how-it-works.html
-//$breakpoint-sm: 400px !default;
-//$breakpoint-md: 768px !default;
-//$breakpoint-lg: 1000px !default;
-
 // マップ型変数を使うと便利
 $breakpoints: (
   "sm": "screen and (max-width: 414px)",
@@ -86,11 +38,6 @@ $breakpoints: (
 // ==============================
 // mixin
 // ==============================
-// @mixinは関数のようなものを作れる
-// https://www.webcreatorbox.com/tech/sass-mixin
-// map-get()の第一引数に変数名、第二引数にマップ型のキーを渡すと、マップ型の値が返る
-// #{}は「インターポーレーション」といって、演算できない箇所、変数使えない箇所でも使えるようにするものcalcなどでよく使う
-// http://book.scss.jp/code/c4/08.html
 @mixin mq($breakpoint: sm) {
   @media #{map-get($breakpoints, $breakpoint)} {
     @content;
@@ -112,7 +59,7 @@ body {
   font-size: $font-size_default;
   line-height: 1.6;
   font-family: Quicksand, 游ゴシック体, "Yu Gothic", YuGothic, "ヒラギノ角ゴシック Pro", "Hiragino Kaku Gothic Pro",
-    メイリオ, Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif; // TODO:リファクタ必要（変数にする）
+    メイリオ, Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
   text-size-adjust: 100%;
   letter-spacing: 0.1em;
 }
@@ -173,7 +120,6 @@ img {
 // ==================================
 // menu
 // ==================================
-// TODO:リファクタ必要（PCで修正が入る際も考えてincludeはクラスの中に書く）終了
 .nav-menu {
   @include mq() {
     display: block;
@@ -219,7 +165,6 @@ img {
   }
 }
 
-// https://www.nxworld.net/tips/12-css-hamburger-menu-active-effect.html
 .menu-trigger {
   display: none;
   @include mq() {
@@ -332,7 +277,6 @@ img {
   &-ornament {
     .container-title {
       &-span {
-        // TODO: リファクタ必要（span以外を使うことも考えてclass名で指定すること）終了
         display: inline-block;
         background: #fff;
         padding: 0 10px;
@@ -371,7 +315,7 @@ img {
   overflow-y: scroll;
   margin: 0 auto;
   border-radius: 5px;
-  background: $bgColor_lightGray; // TODO:リファクタ必要（複数使いまわしている箇所があるため、変数にまとめる）
+  background: $bgColor_lightGray;
   padding: $space_l $space_xl;
   &-item {
     margin-bottom: $space_s;
@@ -574,7 +518,6 @@ img {
 // Utility
 // ==================================
 .bgColor-base {
-  // TODO:リファクタ必要（色が後から修正が入り、赤色になったら？）
   background: $bgColor_lightGray;
   box-shadow: 0px 0px 8px 2px #ddd inset;
 }
@@ -591,6 +534,3 @@ img {
 .ft-l {
   font-size: $font-size_xl;
 }
-
-// 宿題その１：SP（スマホ）でハンバーガーメニューを開いて、メニューをクリックした際に自動でメニューが閉じる様にしてみよう！
-// 宿題その２：iPad（768px）用のレイアウトも作成してみよう！（メニューボタンを非表示。.containerの横幅を100%に。右に出てしまう余白はなぜだろう？）
