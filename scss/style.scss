@@ -459,10 +459,15 @@ img {
       margin-right: $space_l;
       margin-bottom: $space_l;
       box-sizing: border-box;
+      @include mq2() {
+        margin-left: 7.5px;
+        margin-right: 7.5px;
+      }
     }
   }
   &-staff {
     width: calc(25% - #{$space_l});
+
     @include mq() {
       width: calc(50% - #{$space_l});
     }

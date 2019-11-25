@@ -388,6 +388,13 @@ img {
   box-sizing: border-box;
 }
 
+@media screen and (max-width: 768px) {
+  .panel-group .panel {
+    margin-left: 7.5px;
+    margin-right: 7.5px;
+  }
+}
+
 .panel-staff {
   width: calc(25% - 15px);
 }
