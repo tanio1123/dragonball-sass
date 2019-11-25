@@ -299,10 +299,10 @@ img {
 // ==================================
 .container {
   width: $site-width;
-  @include mq2() {
+  @include mq() {
     width: 100%;
   }
-  @include mq() {
+  @include mq2() {
     width: 100%;
   }
   margin-left: auto;
@@ -448,6 +448,11 @@ img {
     &-flex {
       display: flex;
       flex-wrap: wrap;
+    }
+    &:last-child {
+      @include mq2() {
+        margin-right: 0;
+      }
     }
     .panel {
       float: left;

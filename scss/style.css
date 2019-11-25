@@ -210,13 +210,13 @@ img {
   padding-bottom: 120px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 414px) {
   .container {
     width: 100%;
   }
 }
 
-@media screen and (max-width: 414px) {
+@media screen and (max-width: 768px) {
   .container {
     width: 100%;
   }
@@ -373,6 +373,12 @@ img {
 .panel-group-flex {
   display: flex;
   flex-wrap: wrap;
+}
+
+@media screen and (max-width: 768px) {
+  .panel-group:last-child {
+    margin-right: 0;
+  }
 }
 
 .panel-group .panel {
