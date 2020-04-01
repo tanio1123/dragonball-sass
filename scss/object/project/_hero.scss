@@ -1,0 +1,26 @@
+.p-hero {
+  background-image: url("../images/dragonball_header.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 700px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__title {
+    font-size: 60px;
+    font-family: $font-family_corp;
+    color: #fff;
+    text-shadow: 2px 2px 2px #000, 3px 3px 3px #000;
+    @include mq() {
+      text-align: center;
+    }
+  }
+  br {
+    display: none;
+    @include mq() {
+      display: block;
+    }
+  }
+}

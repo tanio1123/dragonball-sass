@@ -1,0 +1,122 @@
+.c-nav-menu {
+  @include mq() {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: -100%;
+    background: rgba(255, 255, 255, 0.85);
+    width: 100%;
+    height: 100vh;
+    padding-top: 50px;
+    transition: 0.5s;
+    &.active {
+      transition: 0.5s;
+      transform: translateX(-100%);
+      z-index: 2;
+    }
+  }
+  @include mq2() {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: -100%;
+    background: rgba(255, 255, 255, 0.85);
+    width: 100%;
+    height: 100vh;
+    padding-top: 50px;
+    transition: 0.5s;
+    &.active {
+      transition: 0.5s;
+      transform: translateX(-100%);
+      z-index: 2;
+    }
+  }
+}
+
+.c-menu {
+  display: flex;
+  align-items: center;
+  font-size: $font-size_xl;
+  font-family: $font-family_corp;
+  &__item {
+    margin-right: $space_xl;
+  }
+  &__link {
+    -webkit-font-smoothing: initial;
+  }
+  @include mq() {
+    display: block;
+    font-size: $font-size_xxl;
+    &__item {
+      margin-right: initial;
+    }
+    &__link {
+      -webkit-font-smoothing: initial;
+      display: block;
+      padding: $space_l;
+      text-align: center;
+    }
+  }
+  @include mq2() {
+    display: block;
+    font-size: $font-size_xxl;
+    &__item {
+      margin-right: initial;
+      margin-top: $space_l;
+      margin-bottom: $space_l;
+    }
+    &__link {
+      -webkit-font-smoothing: initial;
+      display: block;
+      padding: $space_l;
+      text-align: center;
+    }
+  }
+}
+
+.c-menu-trigger {
+  display: none;
+  @include mq() {
+    display: inline-block;
+  }
+  @include mq2() {
+    display: inline-block;
+  }
+  transition: all 0.4s;
+  box-sizing: border-box;
+  position: relative;
+  width: 40px;
+  height: 32px;
+  z-index: 3;
+  span {
+    display: inline-block;
+    transition: all 0.4s;
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: $font-color_default;
+    border-radius: 4px;
+    &:nth-of-type(1) {
+      top: 0;
+    }
+    &:nth-of-type(2) {
+      top: 14px;
+    }
+    &:nth-of-type(3) {
+      bottom: 0;
+    }
+  }
+  &.active span {
+    &:nth-of-type(1) {
+      transform: translateY(12px) rotate(-45deg);
+    }
+    &:nth-of-type(2) {
+      opacity: 0;
+    }
+    &:nth-of-type(3) {
+      transform: translateY(-15px) rotate(45deg);
+    }
+  }
+}
