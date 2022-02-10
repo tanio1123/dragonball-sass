@@ -12,7 +12,7 @@
   "devDependencies": {
     "gulp": "^4.0.2",
     "gulp-cli": "^2.2.0",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "nodemon": "^2.0.2",
     "npm-check-updates": "^4.0.4"
   },
